@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador de Tempo</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contador de Tempo</h1>
+  
+  <div id="contador">
+    <p id="data"></p>
+    <p id="ano"></p>
+    <p id="mes"></p>
+    <p id="horas"></p>
+  </div>
+
+  <script>
+    function atualizarContador() {
+      var agora = new Date();
+
+      var data = agora.toLocaleDateString();
+      var ano = agora.getFullYear();
+      var mes = agora.getMonth() + 1; // Adiciona 1, pois os meses são indexados de 0 a 11
+      var horas = agora.toLocaleTimeString();
+
+      document.getElementById('data').innerHTML = 'Data: ' + data;
+      document.getElementById('ano').innerHTML = 'Ano: ' + ano;
+      document.getElementById('mes').innerHTML = 'Mês: ' + mes;
+      document.getElementById('horas').innerHTML = 'Horas: ' + horas;
+    }
+
+    setInterval(atualizarContador, 1000); // Atualiza a cada segundo
+  </script>
+
+</body>
+</html>
