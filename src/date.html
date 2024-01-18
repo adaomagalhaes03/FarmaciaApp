@@ -31,11 +31,13 @@
   <script>
     function atualizarContador() {
       var agora = new Date();
+      var teste;
 
       var data = agora.toLocaleDateString();
       var ano = agora.getFullYear();
       var mes = agora.getMonth() + 1; // Adiciona 1, pois os meses são indexados de 0 a 11
       var horas = agora.toLocaleTimeString();
+  
 
       document.getElementById('data').innerHTML = 'Data: ' + data;
       document.getElementById('ano').innerHTML = 'Ano: ' + ano;
