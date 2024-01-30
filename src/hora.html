@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Horas certas</title>
+</head>
+<body>
+
+      <center>
+        <h1>Atualizar as horas  </h1>
+        <p id="hora"></p>
+        <p id="mes"></p>
+    
+      </center>
+
+      <style>
+        *{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        p{
+            background-color: blue;
+            letter-spacing: 2px;
+            text-align: justify;
+            color: white;
+            width: 200px;
+            height: 20px;
+            padding: 5px;
+        }
+      </style>
+
+
+    <script>
+     //alarme superado com sucesso
+         
+         function Atualizar(){
+
+            var data = new Date();
+              
+            var hora =  data.toLocaleTimeString();
+            var mes = data.getMonth() + 1;
+        
+
+            var hora = document.getElementById("hora").innerHTML = "horas: " + hora;
+
+            var mes = document.getElementById("mes").innerHTML = "Janeiro: " + mes;
+
+            switch(mes){
+        case 1:
+          mes.innerHTML = "Janeiro";
+          break;
+          case 2:
+            mes.innerHTML ="Fevereiro";
+            break;
+      }
+        
+         }
+         setInterval(Atualizar, 1000);
+
+
+
+
+       
+      
+    </script>
+    
+</body>
+</html>
